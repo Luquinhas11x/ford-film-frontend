@@ -1,0 +1,83 @@
+<p-toast></p-toast>
+<div class="all-content">
+  <div class="input-icons" *ngIf="status == true">
+    <input #campoBusca [(ngModel)]="cancelInput" class="input-field" type="text"
+      placeholder="Procure pelo filme na sua lista...">
+    <div class="icons">
+      <div class="icon search"><i class="fa-solid fa-magnifying-glass "></i></div>
+      <div class="icon cancel"><i class="fa-solid fa-xmark" (click)="clean()"></i></div>
+    </div>
+  </div>
+  <div class="input-icons" *ngIf="status == false">
+    <input #campoBusca [(ngModel)]="cancelInput" class="input-field" type="text"
+      placeholder="Procure pelo filme no mercado...">
+    <div class="icon search"><i class="fa-solid fa-magnifying-glass "></i></div>
+    <div class="icon cancel"><i class="fa-solid fa-xmark" (click)="clean()"></i></div>
+  </div>
+  <div class="margin" *ngFor="let film of films | filter: searchText">
+    <div *ngIf="film.status === status">
+      <div class="film-card">
+        <div class="img-info">
+          <img [src]="film.banner">
+          <div class="separate-infos">
+            <div class="name-date">
+              <h1>{{ film.name }}</h1>
+              <div class="icon-score" *ngIf="film.status == false">
+                <p-rating [readonly]="true" (click)="desabled()" [(ngModel)]="film.score"></p-rating>
+              </div>
+              <div class="icon-score" *ngIf="film.status == true">
+                <p-rating [readonly]="false" (click)="edit(film)" [(ngModel)]="film.score"></p-rating>
+              </div>
+            </div>
+            <h3 class="date"><i class="fa-solid fa-calendar"></i> {{ film.date }}</h3>
+            <h3 class="director"><i class="fa-solid fa-address-book"></i> {{ film.director }}</h3>
+            <h3 class="category"><i class="fa-solid fa-masks-theater"></i> {{ film.category }}</h3>
+            <h3 class="description"><i class="fa-solid fa-file-waveform"></i> {{ film.description }}</h3>
+          </div>
+        </div>
+        <div class="buttons">
+          <div *ngIf="film.status == false">
+            <button type="button" (click)="inMyList(film)" class="heart-button"
+              pTooltip="Clique para mandar para sua lista!"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <div *ngIf="film.status == true">
+            <button type="button" class="market-button" (click)="inTheMarket(film)"
+              pTooltip="Clique para mandar de volta ao mercado!"><i class="fa-solid fa-store"></i></button>
+          </div>
+          <div *ngIf="film.status == true">
+            <button type="button" class="edit-button" (click)="showModalDialog(film)"
+              pTooltip="Clique para editar seu filme"><i class="fa-regular fa-pen-to-square"></i></button>
+          </div>
+          <button type="button" class="delet-button" (click)="deletComplete(film)"
+            pTooltip="Clique para deletar o filme!"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-confirmDialog [transitionOptions]="'300ms'" [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+
+<div *ngIf="editFilm">
+  <p-dialog header="{{ editFilm.name }}" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+    [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <div class="align-dialog">
+      <div>
+        <img class="banner-img" [src]="editFilm.banner">
+      </div>
+      <div class="edit-input">
+        <h3 class="date">Data de lançamento: {{ editFilm.date }}</h3>
+        <h3>Diretor: {{ editFilm.director }}</h3>
+        <h4 class="film-description">{{ editFilm.description }}</h4>
+        <h4>{{ editFilm.category }}</h4>
+        <h4>Editar nota:<input [min]="0" [max]="5" class="film-score" type="number" [(ngModel)]="editFilm.score"></h4>
+        <h4>Editar banner:<input class="banner-link" type="text" [(ngModel)]="editFilm.banner"></h4>
+      </div>
+    </div>
+    <ng-template pTemplate="footer">
+      <p-button icon="pi pi-check" (click)="displayModal=false; editStar(editFilm)" label="salvar" class="p-button-text">
+      </p-button>
+      <p-button icon="pi pi-times" (click)="displayModal=false; cancel()" label="cancelar"></p-button>
+    </ng-template>
+  </p-dialog>
+</div>

@@ -1,0 +1,116 @@
+select:invalid {
+  color: gray;
+}
+
+.form {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  width: 140%;
+}
+
+.left-side {
+  border-right: 1px solid black;
+  padding-right: 200px;
+}
+
+.left-side-input {
+  padding: 10px;
+}
+
+.right-side-input {
+  padding: 10px;
+}
+
+.category-input {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-film-button {
+  background-color: red;
+  color: black;
+  border: 1px solid rgba(128, 128, 128, 0.315);
+  padding: 10px 15px 10px 15px;
+  transition: .5s;
+}
+
+.remove-button {
+  border: 1px solid rgba(128, 128, 128, 0.315);
+  padding: 10px;
+  font-size: 20px;
+  transition: .5s;
+}
+
+.enabled {
+  background-color: rgb(42, 156, 42);
+}
+
+.remove-button:hover {
+  background-color: rgba(255, 0, 0, 0.589);
+  cursor: pointer;
+}
+
+.score-input {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.315);
+  padding-left: 12px;
+  font-size: 16px;
+}
+
+.score-input:hover {
+  border: 1px solid rgba(39, 39, 182, 0.651);
+}
+
+.all-register {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-image: linear-gradient(to right, #7b99b6, #013567, #013567, #013567);
+  min-height: 100vh;
+}
+
+.banner-image {
+  height: 400px;
+  width: 600px;
+}
+
+.img-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 14vh;
+}
+
+.category-button {
+  font-size: 16px;
+  background-color: transparent;
+  padding: 10px 70px 10px 70px;
+  border: 1px solid black;
+  transition: .5s;
+}
+
+.category-button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+}
+
+#category {
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.icon {
+  color: black;
+}

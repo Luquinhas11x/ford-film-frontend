@@ -1,0 +1,301 @@
+.film-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 60%;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 1px solid orange;
+}
+
+.margin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.film-card img {
+  height: 160px;
+  width: 130px;
+  border-radius: 6px;
+}
+
+.separate-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+.name-date {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.name-date h1 {
+  width: 100%;
+  color: white;
+}
+
+.icon-score {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.number-score {
+  margin-left: 5px;
+  font-size: 15px;
+  color: rgb(255, 230, 0);
+}
+
+.score {
+  i {
+    font-size: 20px;
+    margin-left: 5px;
+    color: yellow;
+
+  }
+}
+
+.img-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.buttons {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.director {
+  color: #778899;
+}
+
+.director i {
+  color: orange;
+}
+
+.category {
+  color: #778899;
+  padding: 6px 0px 6px 0px;
+}
+
+.category i {
+  color: orange;
+}
+
+.description {
+  color: #778899;
+}
+
+.description i {
+  color: orange;
+}
+
+.date {
+  color: #778899;
+}
+
+.date i {
+  color: orange;
+}
+
+.heart-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  border-radius: 100%;
+  padding: 15px;
+  font-size: 18px;
+  transition: .5s;
+}
+
+.heart-button:hover {
+  color: #723aa7;
+  cursor: pointer;
+}
+
+.market-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  border-radius: 100%;
+  padding: 15px;
+  font-size: 18px;
+  transition: .5s;
+}
+
+.market-button:hover {
+  color: #2563EB;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  border-radius: 100%;
+  padding: 15px;
+  font-size: 18px;
+  transition: .5s;
+}
+
+.edit-button:hover {
+  color: #D97706;
+  cursor: pointer;
+}
+
+.delet-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  border-radius: 100%;
+  padding: 15px;
+  font-size: 20px;
+  transition: .5s;
+}
+
+.delet-button:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.align-dialog {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.edit-input input {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.edit-input {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.film-description {
+  padding-top: 10px;
+}
+
+.banner-link {
+  padding-top: 15px;
+  width: 60%;
+  margin-left: 5px;
+}
+
+.film-score {
+  padding-top: 30px;
+  width: 10%;
+  margin-left: 5px;
+}
+
+.banner-img {
+  height: 300px;
+}
+
+.spin {
+  transition: 1.5s;
+}
+
+.spin:hover {
+  cursor: pointer;
+  transform: rotate(360deg);
+}
+
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons button {
+  position: absolute;
+
+}
+
+.input-icons {
+  width: 50%;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  padding: 10px;
+  position: absolute;
+  z-index: 100;
+}
+
+.search {
+  margin-bottom: 2.2%;
+}
+
+.icons {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cancel {
+  margin-left: 95%;
+  font-size: 18px;
+  margin-bottom: 2.5%;
+}
+
+.cancel:hover {
+  color: red;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #14181C;
+  box-shadow: 10px 5px 5px black;
+  position: relative;
+}
+
+.input-field:focus {
+  background-color: transparent;
+  border: 1px solid #1D9BF0;
+  color: white;
+}
+
+.input-field:focus+div+div {
+  color: #1D9BF0;
+}
+
+.input-field:focus+div {
+  color: #1D9BF0;
+}
+
+.all-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}

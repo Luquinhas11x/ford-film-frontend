@@ -1,0 +1,54 @@
+<p-toast></p-toast>
+<div class="all-register">
+  <form [formGroup]="filmForm" class="form">
+    <div class="input inputs-side">
+      <div class="p-inputgroup left-side-input" for="banner">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-image icon"></i></span>
+        <input type="text" id="banner" formControlName="banner" pInputText placeholder="Banner do filme:">
+      </div>
+      <div class="p-inputgroup left-side-input" for="name">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-film icon"></i></span>
+        <input type="text" id="banner" formControlName="name" pInputText placeholder="Nome do filme:">
+      </div>
+      <div class="p-inputgroup left-side-input" for="date">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-calendar icon"></i></span>
+        <input type="date" id="date" formControlName="date" pInputText placeholder="Descrição do filme:">
+      </div>
+      <div class="p-inputgroup right-side-input" for="score">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-star icon"></i></span>
+        <input class="score-input" type="number" id="score" [min]="0" [max]="5" formControlName="score"
+          placeholder="Nota do filme:">
+      </div>
+      <div class="p-inputgroup right-side-input" for="director">
+        <span class="p-inputgroup-addon"><i class="pi pi-user icon"></i></span>
+        <input type="text" id="director" formControlName="director" pInputText placeholder="Diretor do filme:">
+      </div>
+      <div class="p-inputgroup right-side-input" for="description">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-file-lines icon"></i></span>
+        <input type="text" id="description" formControlName="description" pInputText placeholder="Descrição do filme:">
+      </div>
+    </div>
+      <div class="p-inputgroup category-input" for="category" formArrayName="category">
+        <div>
+          <button type="button" class="category-button" (click)="addCategory()">+ gêneros</button>
+        </div>
+        <div *ngFor="let category of category.controls; let i = index">
+          <select id="category" formControlName="category" [formControlName]="i"
+            placeholder="Categoria do filme:">
+            <option value="" disabled selected>Selecione o gênero...</option>
+            <option value="ação e aventura">ação e aventura</option>
+            <option value="drama">drama</option>
+            <option value="comédia">comédia</option>
+            <option value="romântico">romântico</option>
+            <option value="ficção científica">ficção científica</option>
+            <option value="terror">terror</option>
+          </select>
+        </div>
+      </div>
+  </form>
+  <div class="img-button">
+    <img class="banner-image" src="../assets/images/pixar-banner.jpg" alt="">
+    <button [ngClass]="{'enabled': filmForm.valid}" pButton pRipple type="button" label="adicionar" class="p-button-raised p-button-text add-film-button"
+      (click)="submitFilm()" [disabled]="!filmForm.valid"></button>
+  </div>
+</div>

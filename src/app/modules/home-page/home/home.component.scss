@@ -1,0 +1,14 @@
+img{
+    height: 600px;
+    margin-top: 50px;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
